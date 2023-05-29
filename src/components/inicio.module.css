@@ -1,0 +1,12 @@
+.Container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    }
+    h1{
+        display: flex;
+        justify-content: center;
+        height: 8%;
+        align-items: center;
+    
+    }

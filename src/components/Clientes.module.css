@@ -1,0 +1,36 @@
+.Container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    }
+    h1{
+        display: flex;
+        justify-content: center;
+        height: 8%;
+        align-items: center;
+    
+    }
+    .Filters{
+        height: 8%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .label{
+        font-size: 25px;
+    }
+    .select{
+        height: 25px;
+        
+    }
+    .option{
+        
+    }
+    .input{
+        height: 25px;
+    }
+    .showProducts{
+        height: 84%;
+        background: #cc59cca0;
+    
+    }

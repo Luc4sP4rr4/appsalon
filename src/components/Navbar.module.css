@@ -1,0 +1,9 @@
+.Navi{
+    min-width: 200px;
+    display: grid;
+    
+
+}
+.BtnNav {
+    border-radius: 0px;
+}
