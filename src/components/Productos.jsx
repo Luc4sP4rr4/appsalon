@@ -15,7 +15,7 @@ const Productos = () => {
             </select>    
             <input className={styles.input} type="text" />
       </div>
-      <div className={styles.showProducts}>
+      <div className={styles.show}>
         contenedor de productos
       </div>
     </div>

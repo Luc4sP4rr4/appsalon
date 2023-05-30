@@ -14,7 +14,7 @@ const Clientes = () => {
             </select>    
             <input className={styles.input} type="text" />
       </div>
-      <div className={styles.showProducts}>
+      <div className={styles.show}>
         TABLA DE CLIENTES
       </div>
 

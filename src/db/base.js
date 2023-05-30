@@ -119,6 +119,175 @@ let db  = [
         tiempo : "30",
         costo: "0",
 
+    },
+    {
+        id : "2",
+        nombre : "corte y barba",
+        descripcion : "corte clasico maquina y tijera",
+        tiempo : "60",
+        costo: "0",
+
     }
+],
+//trunos diarios
+[
+    {
+        id:1,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:2,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:3,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:4,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:5,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:6,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:7,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:8,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:9,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:10,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:11,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:12,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:13,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:14,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:15,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:16,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:17,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:18,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:19,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:20,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:21,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    },
+    {
+        id:22,
+        nombre: 'Juan', 
+        fecha: '2023-05-22',
+        peluquero: 'Carlos', 
+        tipoServicio: 'corte',
+    }
+
+
+],
 ]
-];
+
+export default db
