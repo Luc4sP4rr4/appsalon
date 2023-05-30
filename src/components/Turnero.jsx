@@ -2,6 +2,7 @@ import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import db from '../db/base.js'
+import styles from './Turnero.module.css'
 
 const Turnero = () => {
   let turnosdiarios = db[4].map((item)=>{
@@ -14,7 +15,7 @@ const Turnero = () => {
   const [tipoServicio, setTipoServicio] = useState('');
 
   const [turnero, setTurnero] = useState(turnosdiarios); // Aquí debes tener tus datos del turnero
-  console.log(turnero)
+  
   const handleFechaChange = (selectedDate) => {
     setFecha(selectedDate);
   };
@@ -34,31 +35,37 @@ const Turnero = () => {
 
     return fechaCumpleFiltro && peluqueroCumpleFiltro && tipoServicioCumpleFiltro;
   });
-
+console.log(turnosdiarios)
 
   return (
-    <div>
+    <div className={styles.Container}>
       <h1>TURNERO</h1>
-      <div>
-      <label htmlFor="fecha">Fecha:</label>
-      <DatePicker id="fecha" selected={fecha} onChange={handleFechaChange} />
-      <label htmlFor="peluquero">Peluquero:</label>
-      <input type="text" id="peluquero" value={peluquero} onChange={handlePeluqueroChange} />
-
-      <label htmlFor="tipoServicio">Tipo de Servicio:</label>
-      <select id="tipoServicio" value={tipoServicio} onChange={handleTipoServicioChange}>
-        <option value="">Todos</option>
-        <option value="corte">Corte</option>
-        <option value="corteBarba">Corte y Barba</option>
-      </select>
+      <div className={styles.filter}>
+        <label htmlFor="fecha">Fecha:</label>
+        <DatePicker id="fecha" selected={fecha} onChange={handleFechaChange} />
+        <label htmlFor="peluquero">Peluquero:</label>
+        <select id="peluquero" value={peluquero} onChange={handlePeluqueroChange}>
+          <option value="">Todos</option>
+          <option value="lucas">Lucas</option>
+          <option value="pampa">Pampa</option>
+        </select>
+        <label htmlFor="tipoServicio">Tipo de Servicio:</label>
+        <select id="tipoServicio" value={tipoServicio} onChange={handleTipoServicioChange}>
+          <option value="">Todos</option>
+          <option value="corte">Corte</option>
+          <option value="corteBarba">Corte y Barba</option>
+        </select>
       </div>
-      <ul>
-        {turnosFiltrados.map((turno) => (
-          <li key={turno.id}>
-            {turno.paciente} - {turno.fecha} - {turno.peluquero} - {turno.tipoServicio}
-          </li>
-        ))}
-      </ul>
+      <div className={styles.show}>
+        tabla
+        <ul>
+          {turnosdiarios.map((turno) => (
+            <li key={turno.id}>
+              {turno.id} - {turno.nombre} - {turno.fecha} - {turno.peluquero} - {turno.tipoServicio}
+            </li>
+          ))}
+        </ul>
+      </div>
 
     </div>
   )

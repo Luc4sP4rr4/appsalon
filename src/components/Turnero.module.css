@@ -1,0 +1,22 @@
+.Container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    }
+    h1{
+        display: flex;
+        justify-content: center;
+        height: 8%;
+        align-items: center;
+    
+    }
+    .filters{
+        display: flex;
+        height: 50px;
+    }
+    .show{
+        height: 92%;
+        background: #cc59cca0;
+    
+    }
