@@ -1,74 +1,74 @@
-import { useState } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import db from '../db/base.js'
-import styles from './Turnero.module.css'
+import  { useState, useEffect } from 'react';
+import axios from 'axios';
+import styles from './Turnero.module.css';
 
 const Turnero = () => {
-  let turnosdiarios = db[4].map((item)=>{
-    return item
-    
-  })
-  
-  const [fecha, setFecha] = useState(null);
+  const [fecha, setFecha] = useState('');
   const [peluquero, setPeluquero] = useState('');
-  const [tipoServicio, setTipoServicio] = useState('');
+  const [turnos, setTurnos] = useState([]);
 
-  const [turnero, setTurnero] = useState(turnosdiarios); // Aquí debes tener tus datos del turnero
-  
-  const handleFechaChange = (selectedDate) => {
-    setFecha(selectedDate);
+  useEffect(() => {
+    obtenerTurnos();
+  }, []);
+
+  const obtenerTurnos = async () => {
+    try {
+      const response = await axios.get('/api/turnos');
+      setTurnos(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const handlePeluqueroChange = (event) => {
-    setPeluquero(event.target.value);
+  const filtrarTurnos = () => {
+    // Aplicar filtros de fecha y peluquero a los turnos
+    let turnosFiltrados = turnos;
+
+    if (fecha) {
+      turnosFiltrados = turnosFiltrados.filter(turno => turno.fecha === fecha);
+    }
+
+    if (peluquero) {
+      turnosFiltrados = turnosFiltrados.filter(turno => turno.peluquero === peluquero);
+    }
+
+    return turnosFiltrados;
   };
-
-  const handleTipoServicioChange = (event) => {
-    setTipoServicio(event.target.value);
-  };
-
-  const turnosFiltrados = turnero.filter((turno) => {
-    const fechaCumpleFiltro = turno.fecha.includes(fecha);
-    const peluqueroCumpleFiltro = turno.peluquero === peluquero || peluquero === '';
-    const tipoServicioCumpleFiltro = turno.tipoServicio === tipoServicio || tipoServicio === '';
-
-    return fechaCumpleFiltro && peluqueroCumpleFiltro && tipoServicioCumpleFiltro;
-  });
-console.log(turnosdiarios)
 
   return (
-    <div className={styles.Container}>
-      <h1>TURNERO</h1>
-      <div className={styles.filter}>
+    <div className={styles.container}>
+      <h1>Turnero</h1>
+      <div>
         <label htmlFor="fecha">Fecha:</label>
-        <DatePicker id="fecha" selected={fecha} onChange={handleFechaChange} />
+        <input
+          type="text"
+          id="fecha"
+          value={fecha}
+          onChange={e => setFecha(e.target.value)}
+        />
+      </div>
+      <div>
         <label htmlFor="peluquero">Peluquero:</label>
-        <select id="peluquero" value={peluquero} onChange={handlePeluqueroChange}>
-          <option value="">Todos</option>
-          <option value="lucas">Lucas</option>
-          <option value="pampa">Pampa</option>
-        </select>
-        <label htmlFor="tipoServicio">Tipo de Servicio:</label>
-        <select id="tipoServicio" value={tipoServicio} onChange={handleTipoServicioChange}>
-          <option value="">Todos</option>
-          <option value="corte">Corte</option>
-          <option value="corteBarba">Corte y Barba</option>
-        </select>
+        <input
+          type="text"
+          id="peluquero"
+          value={peluquero}
+          onChange={e => setPeluquero(e.target.value)}
+        />
       </div>
-      <div className={styles.show}>
-        tabla
-        <ul>
-          {turnosdiarios.map((turno) => (
-            <li key={turno.id}>
-              {turno.id} - {turno.nombre} - {turno.fecha} - {turno.peluquero} - {turno.tipoServicio}
-            </li>
-          ))}
-        </ul>
-      </div>
-
+      <button className={styles.button} onClick={filtrarTurnos}>Filtrar</button>
+      <ul className={styles.list}>
+        {filtrarTurnos().map(turno => (
+          <li key={turno.id} className={styles.item}>
+            <p>Fecha: {turno.fecha}</p>
+            <p>Hora: {turno.hora}</p>
+            <p>Peluquero: {turno.peluquero}</p>
+            <p>Servicio: {turno.servicio}</p>
+          </li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Turnero
+export default Turnero;

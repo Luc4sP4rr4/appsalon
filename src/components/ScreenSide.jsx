@@ -11,7 +11,7 @@ const ScreenSide = ({opcion}) => {
   
   let renderiza;
   
-  {switch (opcion) {
+  switch (opcion) {
     
     case "Clientes":
       renderiza = <Clientes/>;
@@ -34,7 +34,7 @@ const ScreenSide = ({opcion}) => {
     default:
       renderiza = <Inicio/>;
       break;
-  }}
+  }
 
   return (
     <div className={styles.Container}>

@@ -1,0 +1,45 @@
+.Container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    }
+    h1{
+        display: flex;
+        justify-content: center;
+        height: 8%;
+        align-items: center;
+    
+    }
+.show{
+    height: 92%;
+    display: flex;
+    flex-direction: column;
+    background: #cc59cca0;
+
+}
+.btnera{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+
+}
+.btns {
+    border-radius: 0px;
+    background-color: #97949498;
+    flex-grow: 1;
+    flex-basis: calc(50% - 20px); /* Ajusta el valor del margen según tus necesidades */
+    margin: 10px;
+}
+
+.containerff {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .buttoffn {
+    flex-grow: 1;
+    flex-basis: calc(50% - 20px); /* Ajusta el valor del margen según tus necesidades */
+    margin: 10px;
+  }
