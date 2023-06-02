@@ -12,26 +12,21 @@ const Caja = () => {
   
   switch (op) {
     
-    case "Clientes":
+    case "Cobrar":
       renderiza = <Clientes/>;
       break;
-    case "Empleados":
+    case "Historial":
       renderiza = <Empleados/>;
       break;
-      case "Productos":
+      case "movimientos":
       renderiza = <Productos/>;
       break;
-      case "Servicios":
+      case "AbrirCerrar":
       renderiza = <Servicios/>;
       break;
-      case "Turnero":
-      renderiza = <Turnero/>;
-      break;
-      case "Caja":
-      renderiza = <Caja/>;
-      break;
+      
     default:
-      renderiza = <Inicio/>;
+      renderiza = <Cobrar/>;
       break;
   }
 
