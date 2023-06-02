@@ -13,7 +13,11 @@ const empleadoSchema = new Schema({
   },
   comision: {
     type: Number,
-    required: true,
+    required: false,
+  },
+  sueldo : {
+    type: Number,
+    required: false,
   },
   telefono: {
     type: String,

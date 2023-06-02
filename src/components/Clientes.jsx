@@ -1,26 +1,48 @@
-import styles from './Clientes.module.css'
-const Clientes = () => {
-  return (
-    <div className={styles.Container}>
-      <h1>CLIENTES</h1>
-      <div className={styles.Filters}>
-            <label className={styles.label}>Filtrar por:</label>
-            <select className={styles.select} >
-                <option className={styles.option} value="">--Sin filtro--</option>
-                <option className={styles.option} value="id">Id</option>
-                <option className={styles.option} value="name">Nombre y apellido</option>
-                <option className={styles.option} value="telefono">Telefono</option>
-                <option className={styles.option} value="peluquero">Peluquero</option>
-            </select>    
-            <input className={styles.input} type="text" />
-      </div>
-      <div className={styles.show}>
-        TABLA DE CLIENTES
-      </div>
+import  { useState } from 'react';
+import styles from './Clientes.module.css';
+import AddCliente from './AgregarCliente';
+import BuscarCliente from './BuscarCliente';
+
+ const Clientes = () => {
+
+  const [ op , setOp ] = useState('')
+
+ const handleSeleccionarOpcion = (opcionSeleccionada) => {
+  setOp(opcionSeleccionada);
+  }
+  let renderiza;
+  
+   switch (op) {
+    
+     case "Buscar":
+       renderiza = <BuscarCliente/>;
+       break;
+     case "Agregar":
+       renderiza = <AddCliente/>;
+       break;
+      
+      
+     default:
+       renderiza = <AddCliente/>;
+       break;
+   }
+
+   return (
+     <div className={styles.Container}>
+       <h1>CLIENTES</h1>
+      
+       <div className={styles.show}>
+         TABLA DE CLIENTES
+         <div className={styles.btnera}>
+          <button className={styles.btns} onClick={() => handleSeleccionarOpcion("Buscar")}>BUSCAR</button>
+          <button className={styles.btns} onClick={() => handleSeleccionarOpcion("Agregar")}>AGREGAR</button>
+          </div>
+          {renderiza}
+       </div>
 
     
-    </div>
-  )
-}
+     </div>
+   )
+ }
 
 export default Clientes

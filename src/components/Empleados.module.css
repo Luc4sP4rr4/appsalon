@@ -15,3 +15,17 @@
     background: #cc59cca0;
 
 }
+.btnera{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+
+}
+.btns {
+    border-radius: 0px;
+    background-color: #97949498;
+    flex-grow: 1;
+    flex-basis: calc(50% - 20px); /* Ajusta el valor del margen según tus necesidades */
+    margin: 10px;
+}

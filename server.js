@@ -1,29 +1,30 @@
+// server.js
+
 import express from 'express';
-import clienteRoutes from './routes/clienteRoutes.js';
-import empleadoRoutes from './routes/empleadoRoutes.js';
-import productoRoutes from './routes/productoRoutes.js';
+import clientesRouter from './routes/clientes.js';
+import productosRouter from './routes/productos.js';
+import serviciosRouter from './routes/servicios.js';
+import ticketsCajaRouter from './routes/ticketsCaja.js';
+import connectDB from './db/db.js';
+import dotenv from 'dotenv';
 
+dotenv.config();
+
+// Configurar Express
 const app = express();
-
-// Agregar middleware necesario
 app.use(express.json());
 
+// Conexión a la base de datos MongoDB
+connectDB()
+
 // Rutas
-app.use('/clientes', clienteRoutes);
-app.use('/empleados', empleadoRoutes);
-app.use('/productos', productoRoutes);
+app.use('/api/clientes', clientesRouter);
+app.use('/api/productos', productosRouter);
+app.use('/api/servicios', serviciosRouter);
+app.use('/api/tickets-caja', ticketsCajaRouter);
 
 // Puerto de escucha
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
-});
-app.post('/api/empleados', (req, res) => {
-  const nuevoEmpleado = req.body;
-  // ...
-  res.status(201).json(nuevoEmpleado);
-});
-
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
 });

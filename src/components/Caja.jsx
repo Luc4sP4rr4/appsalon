@@ -10,25 +10,25 @@ const Caja = () => {
 
   let renderiza;
   
-  switch (op) {
+   switch (op) {
     
-    case "Cobrar":
-      renderiza = <Clientes/>;
-      break;
-    case "Historial":
-      renderiza = <Empleados/>;
-      break;
-      case "movimientos":
-      renderiza = <Productos/>;
-      break;
-      case "AbrirCerrar":
-      renderiza = <Servicios/>;
-      break;
+     case "Cobrar":
+       renderiza = <Clientes/>;
+       break;
+     case "Historial":
+       renderiza = <Empleados/>;
+       break;
+       case "movimientos":
+       renderiza = <Productos/>;
+       break;
+       case "AbrirCerrar":
+       renderiza = <Servicios/>;
+       break;
       
-    default:
-      renderiza = <Cobrar/>;
-      break;
-  }
+     default:
+       renderiza = <Cobrar/>;
+       break;
+   }
 
   return (
     <div className={styles.Container}>

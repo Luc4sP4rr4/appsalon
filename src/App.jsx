@@ -4,6 +4,8 @@ import Navbar from './components/Navbar'
 import ScreenSide from './components/ScreenSide'
 import { useState } from 'react'
 
+
+
 function App() {
   const [opcion, setOpcion] = useState()
   

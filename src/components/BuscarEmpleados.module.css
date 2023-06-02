@@ -1,0 +1,13 @@
+.container {
+    padding: 20px;
+  }
+  
+  .listaEmpleados {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .listaEmpleados li {
+    margin-bottom: 10px;
+  }
+  

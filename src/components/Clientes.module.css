@@ -1,4 +1,4 @@
-.Container{
+ .Container{
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -10,27 +10,26 @@
         align-items: center;
     
     }
-    .Filters{
-        height: 8%;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-    .label{
-        font-size: 25px;
-    }
-    .select{
-        height: 25px;
-        
-    }
-    .option{
-        
-    }
-    .input{
-        height: 25px;
-    }
+    
     .show{
         height: 84%;
         background: #cc59cca0;
     
+    } 
+
+    .btnera{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    
     }
+    .btns {
+        border-radius: 0px;
+        background-color: #97949498;
+        flex-grow: 1;
+        flex-basis: calc(50% - 20px); /* Ajusta el valor del margen según tus necesidades */
+        margin: 10px;
+    }
+      
+     
