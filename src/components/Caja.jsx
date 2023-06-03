@@ -8,27 +8,27 @@ const Caja = () => {
   setOp(opcionSeleccionada);
   };
 
-  let renderiza;
+  let renderiza = 
   
-   switch (op) {
+  //  switch (op) {
     
-     case "Cobrar":
-       renderiza = <Clientes/>;
-       break;
-     case "Historial":
-       renderiza = <Empleados/>;
-       break;
-       case "movimientos":
-       renderiza = <Productos/>;
-       break;
-       case "AbrirCerrar":
-       renderiza = <Servicios/>;
-       break;
+  //    case "Cobrar":
+  //      renderiza = 'mauri se la come doblada '/*<Clientes/>*/;
+  //      break;
+  //    case "Historial":
+  //      renderiza =  /*<Clientes/>*/;
+  //      break;
+  //      case "movimientos":
+  //      renderiza =  /*<Clientes/>*/;
+  //      break;
+  //      case "AbrirCerrar":
+  //      renderiza =  /*<Clientes/>*/;
+  //      break;
       
-     default:
-       renderiza = <Cobrar/>;
-       break;
-   }
+  //    default:
+  //      renderiza =  /*<Clientes/>*/;
+  //      break;
+  //  }
 
   return (
     <div className={styles.Container}>
