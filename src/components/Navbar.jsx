@@ -1,27 +1,20 @@
 
-import styles from './Navbar.module.css'
+import styles from './styles/Navbar.module.css'
+import { NavLink } from 'react-router-dom';
 
-
-const Navbar = ({setOpcion}) => {
+const Navbar = () => {
   
-  const handleSeleccionarOpcion = (opcionSeleccionada) => {
-    setOpcion(opcionSeleccionada);
-  };
   return (
     <div className={styles.Navi}>
-    <button className={styles.BtnNav} onClick={() => handleSeleccionarOpcion("Inicio")}>INICIO</button>
-    <button className={styles.BtnNav} onClick={() => handleSeleccionarOpcion("Clientes")}>CLIENTES</button>
-    <button className={styles.BtnNav} onClick={() => handleSeleccionarOpcion("Empleados")}>EMPLEADOS</button>
-    <button className={styles.BtnNav} onClick={() => handleSeleccionarOpcion("Productos")}>PRODUCTOS</button>
-    <button className={styles.BtnNav} onClick={() => handleSeleccionarOpcion("Servicios")}>SERVICIOS</button>
-    <button className={styles.BtnNav} onClick={() => handleSeleccionarOpcion("Turnero")}>TURNOS</button>
-    <button className={styles.BtnNav} onClick={() => handleSeleccionarOpcion("Caja")}>CAJA</button>
+      <NavLink to="/inicio" className={styles.BtnNav}>INICIO</NavLink>
+      <NavLink to="/clientes" className={styles.BtnNav}>CLIENTES</NavLink>
+      <NavLink to="/empleados" className={styles.BtnNav}>EMPLEADOS</NavLink>
+      <NavLink to="/productos" className={styles.BtnNav}>PRODUCTOS</NavLink>
+      <NavLink to="/servicios" className={styles.BtnNav}>SERVICIOS</NavLink>
+      <NavLink to="/turnero" className={styles.BtnNav}>TURNOS</NavLink>
+      <NavLink to="/caja" className={styles.BtnNav}>CAJA</NavLink>
     </div>
   )
 }
 
 export default Navbar
-
-// const handleSeleccionarOpcion = (opcionSeleccionada) => {
-//   setOpcion(opcionSeleccionada);
-// };

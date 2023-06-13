@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styles from './Caja.module.css'
+import styles from './styles/Caja.module.css'
 
 const Caja = () => {
  const [ op , setOp ] = useState('')
@@ -8,7 +8,8 @@ const Caja = () => {
   setOp(opcionSeleccionada);
   };
 
-  let renderiza = 
+  let renderiza ='hola';
+  op
   
   //  switch (op) {
     

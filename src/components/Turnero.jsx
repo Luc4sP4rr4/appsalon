@@ -1,6 +1,6 @@
 import  { useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from './Turnero.module.css';
+import styles from './styles/Turnero.module.css';
 
 const Turnero = () => {
   const [fecha, setFecha] = useState('');

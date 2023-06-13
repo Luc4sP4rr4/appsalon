@@ -1,5 +1,5 @@
 import  { useState } from 'react';
-import styles from './AgregarEmpleado.module.css';
+import styles from './styles/AgregarEmpleado.module.css';
 import axios from 'axios';
 
 const AgregarEmpleado = () => {

@@ -1,6 +1,6 @@
 import  { useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from './BuscarCliente.module.css';
+import styles from './styles/BuscarCliente.module.css';
 
 const BuscarCliente = () => {
   const [clientes, setClientes] = useState([]);

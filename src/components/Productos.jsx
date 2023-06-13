@@ -1,4 +1,4 @@
-import styles from './Productos.module.css'
+import styles from './styles/Productos.module.css'
 const Productos = () => {
   return (
     <div className={styles.Container}>

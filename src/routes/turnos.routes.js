@@ -5,7 +5,7 @@ import {
   crearTurno,
   actualizarTurno,
   eliminarTurno,
-} from '../controllers/turnoController';
+} from '../controllers/turnoController.js';
 
 const router = express.Router();
 

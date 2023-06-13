@@ -1,5 +1,5 @@
 import  { useState } from 'react';
-import styles from './Clientes.module.css';
+import styles from './styles/Clientes.module.css';
 import AddCliente from './AgregarCliente';
 import BuscarCliente from './BuscarCliente';
 

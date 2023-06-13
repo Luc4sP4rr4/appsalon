@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styles from './Empleados.module.css'
+import styles from './styles/Empleados.module.css'
 import BuscarEmpleados from './BuscarEmpleado'
 import AgregarEmpleado from './AgregarEmpleado'
 

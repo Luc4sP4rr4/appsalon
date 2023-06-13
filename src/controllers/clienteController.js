@@ -61,7 +61,7 @@
 
 // export default clienteController;
 
-import { Cliente } from '../models/cliente';
+import { Cliente } from '../models/cliente.js';
 
 // Controlador para obtener todos los clientes
 export const obtenerClientes = async (req, res) => {

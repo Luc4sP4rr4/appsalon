@@ -1,6 +1,6 @@
 import  { useState } from 'react';
 import axios from 'axios';
-import styles from './AddCliente.module.css';
+import styles from './styles/AddCliente.module.css';
 
 const AddCliente = () => {
   const [nombre, setNombre] = useState('');

@@ -3,7 +3,7 @@ import {
   abrirCaja,
   cerrarCaja,
   obtenerCaja,
-} from '../controllers/cajaController';
+} from '../controllers/cajaController.js';
 
 const router = express.Router();
 
@@ -15,5 +15,6 @@ router.post('/caja/cerrar', cerrarCaja);
 
 // Ruta para obtener los datos de la caja actual
 router.get('/caja', obtenerCaja);
+
 
 export default router;

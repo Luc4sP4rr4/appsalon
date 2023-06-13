@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import styles from './BuscarEmpleados.module.css';
+import  { useState, useEffect } from 'react';
+import styles from './styles/BuscarEmpleados.module.css';
 
 const BuscarEmpleados = () => {
   const [empleados, setEmpleados] = useState([]);
