@@ -25,13 +25,14 @@ export const obtenerEmpleadoPorId = async (req, res) => {
 
 // Controlador para crear un nuevo empleado
 export const crearEmpleado = async (req, res) => {
-  try {
-    const empleado = new Empleado(req.body);
-    await empleado.save();
-    res.status(201).json(empleado);
-  } catch (error) {
-    res.status(500).json({ mensaje: 'Error al crear el empleado' });
-  }
+  res.send("create empleado")
+  // try {
+  //   const empleado = new Empleado(req.body);
+  //   await empleado.save();
+  //   res.status(201).json(empleado);
+  // } catch (error) {
+  //   res.status(500).json({ mensaje: 'Error al crear el empleado' });
+  // }
 };
 
 // Controlador para actualizar un empleado existente

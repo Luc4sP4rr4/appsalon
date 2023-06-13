@@ -13,7 +13,7 @@ function App() {
 
       
      <Navbar className={Styles.Navbar} />
-     <ScreenSide className={Styles.ScreenSide}/>
+     <ScreenSide fn={()=>console.log(this.name)} className={Styles.ScreenSide}/>
 
      
      

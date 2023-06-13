@@ -1,35 +1,27 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import {router as caja} from './routes/caja.routes.js';
-import {router as clientes} from './routes/clientes.routes.js';
-import {router as empleados} from './routes/empelados.routes.js';
-import {router as productos} from './routes/productos.routes.js';
-import {router as servicios} from './routes/servicios.routes.js';
-import {router as turnos} from './routes/turnos.routes.js';
+import mongoose from 'mongoose';
+import empleadosRoutes from './routes/empelados.routes.js'
 
-dotenv.config();
+dotenv.config()
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3500;
 
-// Configuración de enrutamiento
-app.use(express.json());
-app.use('/api', caja, clientes,empleados,productos,servicios,turnos );
+//midleware
 
-// Conexión a la base de datos MongoDB
-mongoose
-  .connect(process.env.DB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log('Conexión exitosa a la base de datos');
-    // Inicia el servidor
-    app.listen(PORT, () => {
-      console.log(`Servidor escuchando en el puerto ${PORT}`);
-    });
-  })
-  .catch((error) => {
-    console.log('Error al conectar a la base de datos:', error);
-  });
+app.use('/api',empleadosRoutes)
+
+//routes
+app.get('/',(req, res)=>{res.send('hola a la api')
+})
+
+
+//conexion DB
+
+mongoose.connect(process.env.DB_URI)
+.then(()=>{console.log('conected to db')})
+.catch((error)=>console.error(error))
+
+
+app.listen(port , ()=>console.log('server listening on port',port))
